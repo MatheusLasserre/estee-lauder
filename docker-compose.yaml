@@ -1,0 +1,18 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: estee-mysql
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=esteelauder
+      - MYSQL_ROOT_PASSWORD=esteelauder
+    ports:
+      - '3306:3306'
+    volumes:
+      - db:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+volumes:
+  db:
+    driver: local

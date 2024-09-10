@@ -16,9 +16,22 @@
     -> Save favorites on LocalStorage.
 
 
--> With the time that i have, i couldn't finish the search by location and couldn't save the favorites at the localStorage. I also had to make a tradeoff: code readability for features. The code is not bad, but could be better. Also, the design is kinda off. If i had more time, these would be the things i would fix.
 
 
 
 
-
+Challenge:
+Traduzir e salvar os dados abaixo para o README, pois fazer parte dos meus pensamentos
+Seed:
+	-> Filtrar por X e Y não nulos
+	-> Endereço: LocationDescription, Address, block, lot
+	-> Pegar dias em dayshours, vazio é indefinido
+	-> Usar coordenadas pra saber o local, pois os endereços são muito aleatórios
+	-> Usar : como separador dos foodItems
+	-> Tabela com todos os fooditems
+	
+	
+-> Usar ip pra localizar, ou pedir uma região de São Francisco
+-> Colocar um search query em "What are you looking for?"
+-> Colocar uma distância máxima do pedido
+-> Colocar opção "Aberto agora"

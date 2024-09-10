@@ -10,11 +10,35 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
+model FoodTruck {
+    id                  Int        @id @default(autoincrement())
+    name                String     @db.VarChar(255)
+    cnn                 Int
+    type                String
+    LocationDescription String
+    Address             String
+    block               String
+    lot                 String
+    permit              String
+    status              String
+    // dayshours           String
+    latitude            Float
+    longitude           Float
+    foodItems           FoodItem[]
+
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+
+    @@index([name])
+}
+
+model FoodItem {
+    id   Int    @id @default(autoincrement())
+    name String @unique @db.VarChar(255)
+
+    createdAt DateTime    @default(now())
+    updatedAt DateTime    @updatedAt
+    FoodTruck FoodTruck[]
 
     @@index([name])
 }
